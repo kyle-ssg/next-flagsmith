@@ -20,7 +20,7 @@ const LoginForm: FC<{ defaultUser: User | undefined }> = ({ defaultUser }) => {
     })
   }
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!disableLogin) {
       login(formData)
@@ -38,7 +38,7 @@ const LoginForm: FC<{ defaultUser: User | undefined }> = ({ defaultUser }) => {
           Logout
         </button>
       ) : (
-        <form className='d-flex flex-row gap-4' onSubmit={handleSubmit}>
+        <form className='d-flex flex-row gap-4' onSubmit={handleLogin}>
           <input
             type='email'
             className='form-control'
