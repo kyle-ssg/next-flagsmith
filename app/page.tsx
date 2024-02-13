@@ -36,7 +36,8 @@ export default function Home() {
             Flagsmith Docs <span>-&gt;</span>
           </h2>
           <p className='fs-sm text-muted'>
-            Find out how to use Flagsmith<br/> with Next.js
+            Find out how to use Flagsmith
+            <br /> with Next.js
           </p>
         </a>
         <a

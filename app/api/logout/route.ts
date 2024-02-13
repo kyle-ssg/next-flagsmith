@@ -1,9 +1,8 @@
 'use server'
 
 import { cookies } from 'next/headers'
-import { NextApiRequest, NextApiResponse } from 'next'
 
-export async function POST(request: NextApiRequest, res: NextApiResponse) {
+export async function POST() {
   // Mock login API
   cookies().delete('user')
   return new Response('{}', {
