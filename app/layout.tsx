@@ -18,7 +18,10 @@ export default async function RootLayout({
 }>) {
   const defaultUser = useDefaultUser()
   const flagsmith = createFlagsmithInstance()
-  await flagsmith.init({ environmentID: '5zsj2BaedF6BcBHXLNGqUj' })
+  await flagsmith.init({
+    environmentID: '5zsj2BaedF6BcBHXLNGqUj',
+    identity: defaultUser?.id,
+  })
   const serverState = flagsmith.getState()
   console.log(serverState)
   return (
