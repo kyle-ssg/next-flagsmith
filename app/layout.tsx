@@ -5,6 +5,7 @@ import Nav from '@/app/components/Nav'
 import useDefaultUser from '@/app/hooks/useDefaultUser'
 import { createFlagsmithInstance } from 'flagsmith/isomorphic'
 import FeatureFlagProvider from '@/app/components/FeatureFlagProvider'
+import getTraits from '@/app/utils/getTraits'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default async function RootLayout({
   await flagsmith.init({
     environmentID: '5zsj2BaedF6BcBHXLNGqUj',
     identity: defaultUser?.id,
+    traits: getTraits(defaultUser),
   })
   const serverState = flagsmith.getState()
   console.log(serverState)

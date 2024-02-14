@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import { User } from '@/app/types'
 import { useFlagsmith } from 'flagsmith/react'
+import getTraits from '@/app/utils/getTraits'
 
 export interface LoginRequest {
   email: string
@@ -20,7 +21,7 @@ export default function (defaultUser: User | null = null) {
       .then((res) => res.json())
       .then((res: User | null) => {
         if (res) {
-          flagsmith.identify(res.id)
+          flagsmith.identify(res.id, getTraits(res))
           setUser(res)
         }
       })
