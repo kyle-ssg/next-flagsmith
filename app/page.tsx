@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Logo from '@/app/components/Logo'
-
+const flagsmithEnvironment = '5zsj2BaedF6BcBHXLNGqUj'
 export default function Home() {
   return (
     <main className={'main'}>
