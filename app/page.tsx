@@ -2,17 +2,11 @@
 
 import Image from 'next/image'
 import Logo from '@/app/components/Logo'
-const flagsmithEnvironment = '5zsj2BaedF6BcBHXLNGqUj'
+import WelcomeMessage from '@/app/components/WelcomeMessage'
 export default function Home() {
   return (
     <main className={'main'}>
-      <div className='border border-1 rounded border-secondary p-2'>
-        <code>
-          Get started by editing&nbsp;
-          <span className='text-primary'>app/page.tsx</span>
-        </code>
-      </div>
-
+      <WelcomeMessage />
       <div className={'d-flex gap-4 text-center logo-container flex-column'}>
         <Image
           className={'logo'}
